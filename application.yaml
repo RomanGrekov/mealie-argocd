@@ -8,7 +8,7 @@ spec:
 
   source:
     repoURL: https://github.com/RomanGrekov/mealie-argocd.git
-    targetRevision: HEAD
+    targetRevision: mealie-next
     path: argocd/overlays/dev
   destination: 
     server: https://kubernetes.default.svc
