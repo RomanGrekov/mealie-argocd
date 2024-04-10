@@ -1,0 +1,6 @@
+bases:
+  - "../../bases/"
+
+namespace: mealie-dev
+namePrefix: dev-
+nameSuffix: "-1"

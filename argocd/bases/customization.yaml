@@ -1,0 +1,9 @@
+resources:
+  - deployment.yml
+  - service.yml
+  - ingress.yml
+  - pvc.yml
+
+commonLabels:
+  owner: RomanG
+  Project: test

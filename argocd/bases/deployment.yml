@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mealie
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mealie
+  template:
+    metadata:
+      labels:
+        app: mealie
+    spec:
+      volumes:
+        - name: mealie-vol
+          persistentVolumeClaim:
+            claimName: mealie-pvc
+      containers:
+        - name: app
+          image: roman1grekov/mealie:latest
+          ports:
+            - name: http
+              containerPort: 9000
+          volumeMounts:
+            - mountPath: "/app/data"
+              name: mealie-vol
+          resources:
+            requests:
+              memory: "1024Mi"
+              cpu: "1000m"
+            limits:
+              memory: "2048Mi"
+              cpu: "1500m"
+          env:
+          - name: ALLOW_SIGNUP
+            value: "false"
+          - name: DB_ENGINE 
+            value: sqlite 
+          - name: WEB_GUNICORN
+            value: "false"
+          - name: WORKERS_PER_CORE
+            value: 0.5
+          - name: MAX_WORKERS
+            value: 1
+          - name: WEB_CONCURRENCY
+            value: 1
