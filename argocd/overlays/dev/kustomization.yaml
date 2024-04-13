@@ -1,6 +1,5 @@
 bases:
   - "../../bases/"
-  - pvc.yml
 
 namespace: mealie-dev
 namePrefix: dev-
