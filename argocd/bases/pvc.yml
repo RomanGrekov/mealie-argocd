@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: mealie-pvc
 spec:
-  storageClassName: ebs-sc
+  storageClassName: test
   accessModes:
     - ReadWriteOnce
   resources:

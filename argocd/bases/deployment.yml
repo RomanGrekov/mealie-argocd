@@ -16,6 +16,8 @@ spec:
         - name: mealie-vol
           persistentVolumeClaim:
             claimName: mealie-pvc
+      #nodeSelector:
+      #  arch: "arm"
       containers:
         - name: app
           image: roman1grekov/mealie:latest

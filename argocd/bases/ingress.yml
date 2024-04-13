@@ -4,9 +4,9 @@ metadata:
   name: mealie
   annotations:
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefic
   rules:
-  - host: "mealie.danit.watashinoheyadesu.pp.ua"
+  - host: "mealie.rancher.localhost"
     http:
       paths:
       - path: /
